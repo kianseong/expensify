@@ -1,4 +1,6 @@
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import type { Metadata } from 'next';
+import { globalTheme } from './theme';
 
 export const metadata: Metadata = {
   title: 'Expensify',
@@ -12,7 +14,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <ColorSchemeScript />
+      </head>
+      <body>
+        <MantineProvider theme={globalTheme}>{children}</MantineProvider>
+      </body>
     </html>
   );
 }
