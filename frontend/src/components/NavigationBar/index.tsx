@@ -1,3 +1,5 @@
+import { ExpensifyLogo } from '../ExpensifyLogo';
+
 export const NavigationBar = () => {
-  return <h1>Hello, world!</h1>;
+  return <ExpensifyLogo />;
 };

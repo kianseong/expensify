@@ -1,6 +1,9 @@
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import type { Metadata } from 'next';
-import { globalTheme } from './theme';
+import { Inter } from 'next/font/google';
+import '@mantine/core/styles.css';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Expensify',
@@ -13,12 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider theme={globalTheme}>{children}</MantineProvider>
+        <MantineProvider>{children}</MantineProvider>
       </body>
     </html>
   );
